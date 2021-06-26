@@ -1,3 +1,16 @@
+<?php 
+use App\Http\Controllers\productcontroller;
+$total = 0;
+
+if(Session::has('user'))
+{
+  $total = productcontroller::cartItem();
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +26,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Brand</a>
+  <a class="navbar-brand" href="/">E-Comm</a>
 
   <!-- Links -->
   <ul class="navbar-nav">
@@ -24,13 +37,7 @@
       <a class="nav-link" href="/">Product</a>
     </li>
 
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
-      </a>
-      
-    </li>
+    
 
     <form class="form-inline" action="/search">
     <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search">
@@ -38,12 +45,23 @@
   </form>
 
     
-  <li class="nav-item mr">
-      <a class="nav-link" href="#">cart(0)</a>
+  <li class="nav-item">
+      <a class="nav-link" href="#">cart({{$total}})</a>
     </li>
-    
-  </ul>
 
+
+  @if(Session::has('user'))
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
+    </li>
+ @else
+ <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+    </li>
+@endif
+
+
+  </ul>
 </nav>
 <br>
 

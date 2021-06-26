@@ -29,3 +29,14 @@ Route::get('/',[productcontroller::class,'index']);
 Route::get('detail/{id}',[productcontroller::class,'detail']);
 
 Route::get('/search',[productcontroller::class,'search']);
+
+
+Route::post('add_to_cart',[productcontroller::class,'addCart']);
+
+Route::get('/logout', function () {
+
+        Session::forget('user');
+        return redirect('login');
+    
+    
+});

@@ -40,3 +40,9 @@ Route::get('/logout', function () {
     
     
 });
+
+
+Route::get('cartList',[productcontroller::class,'cartList']);
+
+Route::get('removeCart/{id}',[productcontroller::class,'remove']);
+Route::get('ordernow',[productcontroller::class,'order']);

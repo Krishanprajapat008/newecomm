@@ -46,7 +46,7 @@ if(Session::has('user'))
 
     
   <li class="nav-item">
-      <a class="nav-link" href="#">cart({{$total}})</a>
+      <a class="nav-link" href="/cartList">cart({{$total}})</a>
     </li>
 
 

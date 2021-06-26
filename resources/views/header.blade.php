@@ -56,7 +56,7 @@ if(Session::has('user'))
     </li>
  @else
  <li class="nav-item">
-      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/login">Login</a>f
     </li>
 @endif
 

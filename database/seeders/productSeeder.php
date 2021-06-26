@@ -18,11 +18,11 @@ class productSeeder extends Seeder
         DB::table('products')->insert([
 
             [
-                'name'=>'books',
-                'price'=>'500',
+                'name'=>'Motorola',
+                'price'=>'800',
                 'category'=>'Mobile',
-                'description'=>'smartphone Iphone new brand',
-                'gallary'=>"https://upload.wikimedia.org/wikipedia/en/d/d5/Books_Books.JPG"
+                'description'=>'New Iphone new brand',
+                'gallary'=>"/Images/m1.jpg"
             ],
         ]);
 
